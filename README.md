@@ -20,7 +20,7 @@ pip install httpx "mcp[cli]"
 ## Running the Server
 
 ```bash
-python API.py
+python mcp_server/collegefootball.py
 ```
 
 The server starts on `http://0.0.0.0:8500` using the **Streamable HTTP** transport.
@@ -263,10 +263,16 @@ get_live_games()
 
 ```
 CollegeFootballMCPServer/
-├── API.py                     # MCP server with all 52 tools
-├── main.py                    # FastAPI WebSocket + ADK agent server
 ├── mcp_server/
-│   └── collegefootball.py     # Standalone MCP server (alternate entry)
+│   └── collegefootball.py     # MCP server with all 54 tools
+├── main.py                    # FastAPI WebSocket + ADK agent server
+├── static/
+│   └── index.html             # Frontend UI
+├── test.py                    # WebSocket test client
+├── pyproject.toml             # Python dependencies
+├── uv.lock                    # Locked dependency versions
+├── .gitignore                 # Excludes .env, __pycache__, etc.
+├── LICENSE                    # MIT License
 └── README.md                  # This file
 ```
 
